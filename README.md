@@ -11,6 +11,7 @@
 2. run `composer install`
 3. buat file `.env` dari contoh file `.env.example`
 4. run `php artisan key:generate`
-5. run `php artisan optimize`
-6. run `php artisan serve`
+5. run `php artisan migrate`
+6. run `php artisan optimize`
+7. run `php artisan serve`
 
