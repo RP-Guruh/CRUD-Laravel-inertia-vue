@@ -2,8 +2,9 @@ require("./bootstrap");
 
 import { App, plugin } from "@inertiajs/inertia-vue";
 import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-Vue.use(plugin);
+Vue.use(plugin, Vuelidate);
 
 const el = document.getElementById("app");
 

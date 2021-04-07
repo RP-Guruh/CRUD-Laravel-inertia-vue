@@ -47,7 +47,6 @@
                 </nav>
             </div>
         </div>
-
 </header>
 </template>
 

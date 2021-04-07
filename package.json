@@ -21,7 +21,9 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.8.6",
         "@inertiajs/inertia-vue": "^0.5.7",
+        "@smartweb/vue-flash-message": "^0.6.10",
         "vue": "^2.6.12",
-        "vue-template-compiler": "^2.6.12"
+        "vue-template-compiler": "^2.6.12",
+        "vuelidate": "^0.7.6"
     }
 }

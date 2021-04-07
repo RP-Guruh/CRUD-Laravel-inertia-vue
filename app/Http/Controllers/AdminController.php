@@ -28,16 +28,22 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $klasemen = new KlasemenModel();
-        $klasemen->nama_klub = $request->nama_klub;
-        $klasemen->main = $request->main;
-        $klasemen->menang = $request->menang;
-        $klasemen->seri = $request->seri;
-        $klasemen->kalah = $request->kalah;
-        $klasemen->jumlah_point = ($request->menang * 3) + $request->seri;
 
-        $klasemen->save();
-
-        return redirect(route('admin/dashboard'));
+        $cek = KlasemenModel::where('nama_klub', '=', $request->nama_klub)->first();
+        if ($cek === null) {
+            $klasemen->nama_klub = $request->nama_klub;
+            $klasemen->main = $request->main;
+            $klasemen->menang = $request->menang;
+            $klasemen->seri = $request->seri;
+            $klasemen->kalah = $request->kalah;
+            $klasemen->jumlah_point = ($request->menang * 3) + $request->seri;
+            $klasemen->save();
+            return redirect(route('admin/dashboard'));
+        } else {
+            return Inertia::render('form', [
+                'pesan' => "Nama Klub Sudah Ada Silahkan Input Kembali",
+            ]);
+        }
     }
 
     public function about()

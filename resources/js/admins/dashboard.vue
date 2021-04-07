@@ -52,22 +52,22 @@
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap text-center">{{klub.main}}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden lg:table-cell">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap text-center">
                                     {{klub.menang}}
                                 </p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden lg:table-cell">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap text-center">
                                     {{klub.seri}}
                                 </p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden lg:table-cell">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap text-center">
                                     {{klub.kalah}}
                                 </p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden lg:table-cell">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap text-center font-extrabold">
                                     {{klub.jumlah_point}}
                                 </p>
