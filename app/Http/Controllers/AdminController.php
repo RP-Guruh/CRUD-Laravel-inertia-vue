@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Models\KlasemenModel;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,7 @@ class AdminController extends Controller
 
     public function index()
     {
+
 
         $klasemen = KlasemenModel::orderBy('jumlah_point', 'DESC')->get();
 
@@ -38,7 +40,7 @@ class AdminController extends Controller
             $klasemen->kalah = $request->kalah;
             $klasemen->jumlah_point = ($request->menang * 3) + $request->seri;
             $klasemen->save();
-            return redirect(route('admin/dashboard'));
+            return redirect(route('admin/dashboard'))->with('success', 'Task Created Successfully!');
         } else {
             return Inertia::render('form', [
                 'pesan' => "Nama Klub Sudah Ada Silahkan Input Kembali",
