@@ -2,9 +2,15 @@ require("./bootstrap");
 
 import { App, plugin } from "@inertiajs/inertia-vue";
 import Vue from "vue";
-import Vuelidate from "vuelidate";
 
-Vue.use(plugin, Vuelidate);
+Vue.use(plugin);
+
+import VueToast from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+Vue.use(VueToast);
+let instance = Vue.$toast.open("You did it!");
+instance.dismiss();
+Vue.$toast.clear();
 
 const el = document.getElementById("app");
 

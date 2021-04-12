@@ -5,10 +5,6 @@
                 <nav class="flex items-center justify-between flex-wrap  ">
                     <div class="flex items-center flex-no-shrink text-white mr-6 ">
                         <img src="https://nemtroutes.com/img/logo/logo.png" alt="" class="h-12 xl:h-20  mr-2  ">
-                        <!-- <span class="text-gray-700 mt-2 hover:text-indigo-400 font-black">
-                                            Yamsol llc
-                                        </span> -->
-
                     </div>
                     <div class="block lg:hidden">
                         <button
@@ -20,7 +16,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div id="main-nav" class="w-full flex-grow lg:flex items-center lg:w-auto hidden  ">
+                    <div id="main-nav" class="w-full flex-grow lg:flex items-center lg:w-auto ">
                         <div class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8">
                             <inertia-link href="/admin/dashboard"
                                 class="block lg:inline-block text-md font-bold  text-orange-500  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
@@ -40,9 +36,7 @@
                             </inertia-link>
 
                         </div>
-                        <div class="text-2xl my-1 mx-3">
-                            <img src="img/shopping.png" class="h-6" alt="">
-                        </div>
+
                     </div>
                 </nav>
             </div>

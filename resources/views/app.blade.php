@@ -12,7 +12,6 @@
 
 <body>
     @inertia
-    @include('sweetalert::alert')
 </body>
 
 <script>

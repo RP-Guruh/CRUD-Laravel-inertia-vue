@@ -19,9 +19,8 @@
         <div class="divide-y divide-gray-200">
 
         <form v-on:submit="checkValidation" novalidate="true">
-           <p class="mt-4" v-if="errors.length">
-
-                <ul>
+            <p class="mt-4" v-if="errors.length">
+               <ul>
                     <hr>
                 <li v-for="error in errors" :key="error.id">{{ error }}</li>
                 </ul>
@@ -120,7 +119,7 @@ export default {
         }
     },
     methods: {
-         submit() {
+        submit() {
             this.$inertia.post('/admin/form/add', this.form)
         },
         checkValidation:

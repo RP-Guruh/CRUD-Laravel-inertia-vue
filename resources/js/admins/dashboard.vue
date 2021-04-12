@@ -2,11 +2,15 @@
     <div>
         <navbar>
         </navbar>
-
         <div class="container mx-auto px-4 sm:px-8">
     <div class="py-8">
+
+        <div v-if="$page.props.flash.success" class="alert">
+           {{ toast_success() }}
+         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+
                 <table class="min-w-full leading-normal">
                     <thead>
                         <tr>
@@ -20,19 +24,19 @@
                             </th>
                             <th
                                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                M.
+                                Main
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                W.
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Menang
                             </th>
-                            <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                D.
+                             <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Seri
                             </th>
-                            <th
-                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                L.
+                             <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Kalah
                             </th>
                             <th
                                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -41,7 +45,7 @@
 
                         </tr>
                     </thead>
-                    <tbody v-for="(klub,rank) in klasemen">
+                    <tbody v-for="(klub, rank) in klasemen">
                         <tr>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-center text-gray-900 whitespace-no-wrap font-extrabold">{{ ++rank }}</p>
@@ -97,7 +101,14 @@ export default {
         'navbar': Navbar
     },
     props: {
-        'klasemen': Array
+        'klasemen': Array,
+    },
+    methods: {
+            toast_success() {
+                this.$toast.success('Data Berhasil Di Tambah.', {
+                position: 'top-right'
+            })
+        }
     }
 }
 </script>

@@ -18,8 +18,6 @@ class AdminController extends Controller
 
     public function index()
     {
-
-
         $klasemen = KlasemenModel::orderBy('jumlah_point', 'DESC')->get();
 
         return Inertia::render('dashboard', [
@@ -40,7 +38,7 @@ class AdminController extends Controller
             $klasemen->kalah = $request->kalah;
             $klasemen->jumlah_point = ($request->menang * 3) + $request->seri;
             $klasemen->save();
-            return redirect(route('admin/dashboard'))->with('success', 'Task Created Successfully!');
+            return Redirect::route('admin/dashboard')->with(['success' => "Test dari controller"]);
         } else {
             return Inertia::render('form', [
                 'pesan' => "Nama Klub Sudah Ada Silahkan Input Kembali",
