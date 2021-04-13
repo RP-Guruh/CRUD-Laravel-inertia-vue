@@ -64,4 +64,11 @@ class AdminController extends Controller
     {
         return Inertia::render('contact', []);
     }
+
+    public function delete($id)
+    {
+        $klasemen = KlasemenModel::find($id);
+        $klasemen->delete();
+        return Redirect::back();
+    }
 }

@@ -22,3 +22,4 @@ Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin/d
 Route::get('/admin/about', [AdminController::class, 'about'])->name('admin/about');
 Route::get('/admin/form', [AdminController::class, 'create'])->name('admin/form');
 Route::post('/admin/form/add', [AdminController::class, 'store'])->name('admin/form/add');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin/delete/{id}');

@@ -2857,6 +2857,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2870,6 +2891,16 @@ __webpack_require__.r(__webpack_exports__);
       this.$toast.success('Data Berhasil Di Tambah.', {
         position: 'top-right'
       });
+    },
+    toast_danger: function toast_danger() {
+      this.$toast.error('Data Berhasil Di Hapus.', {
+        position: 'top-right'
+      });
+    },
+    deleteData: function deleteData(data) {
+      console.log(data);
+      this.$inertia["delete"]('/admin/delete/' + data);
+      this.toast_danger();
     }
   }
 });
@@ -24226,7 +24257,7 @@ var render = function() {
                                   "p",
                                   {
                                     staticClass:
-                                      "text-gray-900 whitespace-no-wrap text-center font-extrabold"
+                                      "text-gray-900 whitespace-no-wrap text-center"
                                   },
                                   [
                                     _vm._v(
@@ -24237,7 +24268,37 @@ var render = function() {
                                   ]
                                 )
                               ]
-                            )
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "px-5 py-5 border-b border-gray-200 bg-white text-sm"
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "text-red-500 whitespace-no-wrap text-center font-extrabold",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.deleteData(klub.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                Delete\n                            "
+                                    )
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._m(1, true)
                           ])
                         ])
                       })
@@ -24350,9 +24411,59 @@ var staticRenderFns = [
               "\n                            Pts.\n                        "
             )
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          },
+          [
+            _vm._v(
+              "\n                            Delete\n                        "
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          },
+          [
+            _vm._v(
+              "\n                            Update\n                        "
+            )
+          ]
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "px-5 py-5 border-b border-gray-200 bg-white text-sm" },
+      [
+        _c(
+          "a",
+          {
+            staticClass:
+              "text-blue-500 whitespace-no-wrap text-center font-extrabold",
+            attrs: { href: "#" }
+          },
+          [
+            _vm._v(
+              "\n                                Update\n                            "
+            )
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
